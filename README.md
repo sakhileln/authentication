@@ -59,14 +59,14 @@ A comprehensive Spring Boot authentication service with JWT tokens, MFA support,
 - SQLite3 database
 - Token revocation and management
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Java 17** + **Spring Boot 3.2.0**
 - **Spring Security** + **JWT**
 - **Spring Data JPA** + **SQLite3**
 - **TOTP** for MFA
 - **Spring Mail** for email notifications
 
-## 📖 Usage Examples
+## Usage Examples
 ### Register a new user
 ```bash
 curl -X POST http://localhost:8080/auth/signup \
