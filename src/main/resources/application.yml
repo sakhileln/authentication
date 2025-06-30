@@ -1,0 +1,130 @@
+spring:
+  application:
+    name: authentication-service
+  
+  # Database Configuration - SQLite3
+  datasource:
+    url: jdbc:sqlite:authdb.sqlite
+    driver-class-name: org.sqlite.JDBC
+    username: 
+    password: 
+  
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.community.dialect.SQLiteDialect
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+  
+  # H2 Console (for development)
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  
+  # Email Configuration
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:your-email@gmail.com}
+    password: ${MAIL_PASSWORD:your-app-password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  
+  # OAuth2 Configuration
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID:your-google-client-id}
+            client-secret: ${GOOGLE_CLIENT_SECRET:your-google-client-secret}
+            scope:
+              - email
+              - profile
+          github:
+            client-id: ${GITHUB_CLIENT_ID:your-github-client-id}
+            client-secret: ${GITHUB_CLIENT_SECRET:your-github-client-secret}
+            scope:
+              - user:email
+              - read:user
+
+# Management endpoints (Actuator)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+  health:
+    mail:
+      enabled: false
+    defaults:
+      enabled: true
+
+# JWT Configuration
+jwt:
+  secret: ${JWT_SECRET:your-super-secret-jwt-key-that-should-be-at-least-256-bits-long}
+  access-token-validity: 900 # 15 minutes
+  refresh-token-validity: 604800 # 7 days
+  issuer: authentication-service
+
+# Application Configuration
+app:
+  auth:
+    # Password requirements
+    password:
+      min-length: 8
+      require-uppercase: true
+      require-lowercase: true
+      require-numbers: true
+      require-special-chars: true
+    
+    # Email verification
+    email:
+      verification:
+        enabled: true
+        token-validity: 3600 # 1 hour
+    
+    # Password reset
+    password-reset:
+      token-validity: 3600 # 1 hour
+    
+    # MFA
+    mfa:
+      enabled: true
+      backup-codes-count: 10
+    
+    # Rate limiting
+    rate-limit:
+      login-attempts: 5
+      window-minutes: 15
+
+# Logging
+logging:
+  level:
+    com.auth: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+# Server Configuration
+server:
+  port: 8080
+  servlet:
+    context-path: / 
