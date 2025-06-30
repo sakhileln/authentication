@@ -1,7 +1,7 @@
 # Authentication Service
 A comprehensive Spring Boot authentication service with JWT tokens, MFA support, email verification, and OAuth2 integration.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Java 17+
@@ -43,21 +43,21 @@ A comprehensive Spring Boot authentication service with JWT tokens, MFA support,
    - Base URL: `http://localhost:8080`
    - Database: `authdb.sqlite` (created automatically)
 
-## 📚 Documentation
+## Documentation
 - **[API Reference](docs/api/endpoints.md)** - Complete API documentation
 - **[Architecture](docs/architecture/system-design.md)** - System design and components
 - **[Security](docs/security/features.md)** - Security features and best practices
 - **[Database](docs/database/schema.md)** - Database schema and management
 - **[Deployment](docs/deployment/deploy.md)** - Production deployment guide
 
-## 🔧 Features
-- 🔐 JWT Authentication with refresh tokens
-- 📧 Email verification system
-- 🔑 Password reset and management
-- 🛡️ Multi-Factor Authentication (TOTP)
-- 🔗 OAuth2 integration (Google, GitHub)
-- 📊 SQLite3 database
-- 🚫 Token revocation and management
+## Features
+- JWT Authentication with refresh tokens
+- Email verification system
+- Password reset and management
+- Multi-Factor Authentication (TOTP)
+- OAuth2 integration (Google, GitHub)
+- SQLite3 database
+- Token revocation and management
 
 ## 🛠️ Tech Stack
 - **Java 17** + **Spring Boot 3.2.0**
@@ -93,7 +93,7 @@ curl -X POST http://localhost:8080/auth/login \
 
 See [API Reference](docs/api/endpoints.md) for complete examples.
 
-## 🔒 Security
+## Security
 - BCrypt password hashing
 - JWT with HMAC-SHA256 signing
 - Configurable token expiration
@@ -101,17 +101,22 @@ See [API Reference](docs/api/endpoints.md) for complete examples.
 - Email verification required
 - CORS configuration
 
-## 📝 License
+## License
 This project is licensed under [license](LISENSE).
 
-## 🤝 Contributing
+## Contributing
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
 4. Add tests
 5. Submit a pull request
 
-## 📞 Support
-- 📖 Check the [documentation](docs/)
-- 🐛 Create an issue for bugs
-- 💡 Suggest features via issues
+## Support
+- Check the [documentation](docs/)
+- Create an issue for bugs
+- Suggest features via issues
+
+## Contact
+- Sakhile III  
+- [LinkedIn Profile](https://www.linkedin.com/in/sakhile-)
+- [GitHub Profile](https://github.com/sakhileln)
