@@ -1,5 +1,4 @@
 # Authentication Service
-
 A comprehensive Spring Boot authentication service with JWT tokens, MFA support, email verification, and OAuth2 integration.
 
 ## Quick Start
