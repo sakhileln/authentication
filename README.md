@@ -102,7 +102,7 @@ See [API Reference](docs/api/endpoints.md) for complete examples.
 - CORS configuration
 
 ## License
-This project is licensed under [license](LISENSE).
+This project is licensed under [license](LISENSE.md).
 
 ## Contributing
 1. Fork the repository
